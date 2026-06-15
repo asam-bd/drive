@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070a" />
+  <title>CSM Drive</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="boot" class="boot">
+    <pre class="boot-text">CSM://drive booting<span class="cursor">_</span></pre>
+  </div>
+
+  <section id="screen-login" class="screen hidden">
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span> root@csm-drive ~ </div>
+      <div class="terminal-body">
+        <h1 class="glow">CSM&nbsp;DRIVE</h1>
+        <p class="muted">// restricted access &mdash; authenticate to continue</p>
+        <form id="login-form" autocomplete="on">
+          <label>email</label>
+          <input type="email" id="email" required placeholder="you@example.com" />
+          <label>password</label>
+          <input type="password" id="password" required placeholder="********" />
+          <button type="submit" class="btn btn-neon" id="login-btn">&gt; sign in</button>
+          <p class="error" id="login-error"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-connect" class="screen hidden">
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span> google://photos </div>
+      <div class="terminal-body center">
+        <h2 class="glow">Connect Google Photos</h2>
+        <p class="muted">// grant access, then pick the photos you want in your drive</p>
+        <button class="btn btn-google" id="google-btn">Continue with Google</button>
+        <button class="btn btn-ghost" id="open-picker-btn">Select photos</button>
+        <button class="btn btn-ghost" id="logout-btn">log out</button>
+        <p class="error" id="connect-error"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-gallery" class="screen hidden">
+    <header class="topbar">
+      <div class="brand glow">CSM://drive</div>
+      <div class="controls">
+        <input type="search" id="search" placeholder="search by date (YYYY-MM-DD)" />
+        <select id="type-filter">
+          <option value="all">all</option>
+          <option value="image">images</option>
+          <option value="video">videos</option>
+        </select>
+        <button class="btn btn-neon" id="add-more-btn">+ add</button>
+        <span id="net-status" class="net online">online</span>
+        <button class="btn btn-ghost" id="logout-btn-2">exit</button>
+      </div>
+    </header>
+
+    <div id="upload-status" class="upload-status hidden"></div>
+    <main id="masonry" class="masonry"></main>
+    <p id="empty" class="muted center hidden">// no media yet &mdash; click "+ add" to pick photos</p>
+  </section>
+
+  <div id="lightbox" class="lightbox hidden">
+    <button class="lb-close" id="lb-close">&times;</button>
+    <button class="lb-nav lb-prev" id="lb-prev">&#10094;</button>
+    <div class="lb-content" id="lb-content"></div>
+    <button class="lb-nav lb-next" id="lb-next">&#10095;</button>
+    <div class="lb-meta" id="lb-meta"></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/firebase-auth.js"></script>
+  <script src="js/google-auth.js"></script>
+  <script src="js/picker.js"></script>
+  <script src="js/cloudinary.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

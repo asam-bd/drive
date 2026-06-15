@@ -8,22 +8,22 @@
 window.CSM_CONFIG = {
   // --- Firebase (email/password auth) -------------------------------------
   firebase: {
-    apiKey: "YOUR_FIREBASE_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    appId: "YOUR_FIREBASE_APP_ID"
+    apiKey: "AIzaSyBtmUmV1KxQDB0jN9gUQnh-eYWKllMPav0",
+    authDomain: "photos-58c8e.firebaseapp.com",
+    projectId: "photos-58c8e",
+    appId: "1:1014680212942:web:2319c936cdcac09dcac79f"
   },
 
   // --- Google OAuth (for Google Photos Picker) ----------------------------
   google: {
-    clientId: "YOUR_GOOGLE_OAUTH_CLIENT_ID.apps.googleusercontent.com",
+    clientId: "19182966942-vglvbunbkmg4ssj2fmp4fsqln30as7ln.apps.googleusercontent.com",
     scope: "https://www.googleapis.com/auth/photospicker.mediaitems.readonly"
   },
 
   // --- Cloudinary (unsigned upload) ---------------------------------------
   cloudinary: {
-    cloudName: "YOUR_CLOUDINARY_CLOUD_NAME",
-    uploadPreset: "YOUR_UNSIGNED_UPLOAD_PRESET",
+    cloudName: "dx7aankx2",
+    uploadPreset: "github_unsigned",
     folder: "csm-drive"
   }
 };
